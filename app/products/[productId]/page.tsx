@@ -1,6 +1,6 @@
+import { Metadata } from "next";
 import { TProduct } from "@/@types/general";
 import { NavButton } from "@/components/NavButton";
-import { Metadata } from "next";
 
 interface ProductPageProps {
   params: {
@@ -17,10 +17,12 @@ export function generateMetadata({ params }: ProductPageProps): Metadata {
 export default async function ProductPage({ params }: ProductPageProps) {
   const response = await fetch(
     `https://dummyjson.com/products/${params.productId}`
-    );
-    const product: TProduct = await response.json();
-    
-    return (
+  );
+  const product: TProduct = await response.json();
+
+  
+
+  return (
     <div className="w-[80%] flex gap-x-4 ">
       <div className="w-[30%] grid grid-cols-2 ">
         {product.images.map((img, index) => {

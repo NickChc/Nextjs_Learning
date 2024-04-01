@@ -1,5 +1,6 @@
+"use client";
 import { notFound } from "next/navigation";
-
+import { getRandom } from "@/utils/getRandom";
 
 interface ReviewPageProps {
   params: {
@@ -9,6 +10,12 @@ interface ReviewPageProps {
 }
 
 export default function ReviewPage({ params }: ReviewPageProps) {
+  const random = getRandom(2);
+
+  if (random === 1) {
+    throw new Error("Error Loading Review!");
+  }
+
   if (params.reviewId > 1000) {
     notFound();
   }
