@@ -1,6 +1,10 @@
 import { ProductCard } from "@/components/ProductCard";
 import { TProduct } from "@/@types/general";
 
+export const metadata = {
+  title: "PRODUCTS",
+};
+
 export default async function Products() {
   const response = await fetch("https://dummyjson.com/products");
   const data = await response.json();
