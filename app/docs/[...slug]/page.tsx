@@ -5,6 +5,7 @@ interface DocsHomePageProps {
 }
 
 export default function DocsHomePage({ params }: DocsHomePageProps) {
+  console.log(params.slug);
   if (params.slug.length === 2) {
     return (
       <h1>
